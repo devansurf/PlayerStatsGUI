@@ -1,0 +1,9 @@
+name: PlayerStatsGUI
+version: 1.0.1
+author: DevsDevelop
+main: com.devsdevelop.playerstats.Main
+description: A plugin that displays super cool player stats!
+
+commands:
+  stats:
+    description: Displays the stats of the player.
