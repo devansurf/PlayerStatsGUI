@@ -49,7 +49,7 @@ public class SQLGetter {
 	}
 	
 	public void createPlayer(Player p){
-		remove(p.getUniqueId()); // ensures that each time a player joins it resets the stats for testing purposes
+		//remove(p.getUniqueId());  //ensures that each time a player joins it resets the stats for testing purposes
 		UUID uuid = p.getUniqueId();
 		try {
 			if (!exists(uuid)) {

@@ -9,10 +9,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.devsdevelop.playerstats.SQL.MySQL;
 import com.devsdevelop.playerstats.SQL.SQLGetter;
 import com.devsdevelop.playerstats.commands.PlayerStatsCommand;
+import com.devsdevelop.playerstats.commands.SeenCommand;
 import com.devsdevelop.playerstats.listeners.InventoryClick;
 import com.devsdevelop.playerstats.listeners.OnBlockPlace;
 import com.devsdevelop.playerstats.listeners.OnDamageTaken;
-import com.devsdevelop.playerstats.listeners.OnJoin;
+import com.devsdevelop.playerstats.listeners.OnExitPlayer;
+import com.devsdevelop.playerstats.listeners.OnJoinPlayer;
 import com.devsdevelop.playerstats.listeners.OnKill;
 
 public class Main extends JavaPlugin{
@@ -43,9 +45,11 @@ public class Main extends JavaPlugin{
 		pm.registerEvents(new OnKill(this), this);
 		pm.registerEvents(new OnBlockPlace(this), this);
 		pm.registerEvents(new OnDamageTaken(this), this);
-		pm.registerEvents(new OnJoin(this), this);
+		pm.registerEvents(new OnJoinPlayer(this), this);
+		pm.registerEvents(new OnExitPlayer(this), this);
 		
 		new PlayerStatsCommand(this);
+		new SeenCommand(this);
 		new InventoryClick(this);
 		PlayerStatsGUI.initialize();
 	}
